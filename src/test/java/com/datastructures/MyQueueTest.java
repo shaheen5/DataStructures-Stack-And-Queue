@@ -19,4 +19,17 @@ public class MyQueueTest {
                          myQueue.getTail().equals(myThirdNode);
         Assert.assertTrue(result);
     }
+    @Test
+    public void given3Numbers_WhenDeletedANode_ShouldMatchWith_NodeAtBeginning(){
+        MyNode<Integer> myFirstNode=new MyNode<>(56);
+        MyNode<Integer> mySecondNode=new MyNode<>(30);
+        MyNode<Integer> myThirdNode=new MyNode<>(70);
+        MyQueue myQueue = new MyQueue();
+        myQueue.enQueue(myFirstNode);
+        myQueue.enQueue(mySecondNode);
+        myQueue.enQueue(myThirdNode);
+        INode frontNode = myQueue.deQueue();
+        myQueue.printQueue();
+        Assert.assertEquals(myFirstNode,frontNode);
+    }
 }
